@@ -1,0 +1,6 @@
+{
+  "commands.bettertime.set": "Set the time on Day%s, %s ticks",
+  "commands.bettertime.banvanilla": "Please use command /bettertime !",
+  "commands.bettertime.query": "The time is day %s, daytime %s ticks, gametime %s ticks",
+  "title.bettertime.day": "Day %s"
+}
