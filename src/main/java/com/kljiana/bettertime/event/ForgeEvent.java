@@ -14,6 +14,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import static com.kljiana.bettertime.BetterTime.*;
+import static com.kljiana.bettertime.config.Config.*;
 
 @Mod.EventBusSubscriber(modid = BetterTime.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public final class ForgeEvent {
@@ -24,6 +25,7 @@ public final class ForgeEvent {
 
     @SubscribeEvent
     public static void showTime(RenderGuiEvent.Pre event){
+        if (!showDateHud.get()) return;
         GuiGraphics guiGraphics = event.getGuiGraphics();
         Minecraft minecraft = Minecraft.getInstance();
         Level level = minecraft.level;
@@ -34,9 +36,9 @@ public final class ForgeEvent {
         guiGraphics.drawString(
                 font,
                 time,
-                10,
-                10,
-                -1
+                dateX.get(),
+                dateY.get(),
+                dateColor.get()
         );
     }
 }

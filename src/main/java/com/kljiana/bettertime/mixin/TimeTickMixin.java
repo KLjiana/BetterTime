@@ -1,14 +1,11 @@
 package com.kljiana.bettertime.mixin;
 
-import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
 import net.minecraft.network.protocol.game.ClientboundSetTitlesAnimationPacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.storage.ServerLevelData;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.List;
+import static com.kljiana.bettertime.config.Config.*;
 
 @Mixin(ServerLevel.class)
 public abstract class TimeTickMixin {
@@ -29,6 +27,7 @@ public abstract class TimeTickMixin {
 
     @Inject(method = "tickTime", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/level/ServerLevel;setDayTime(J)V"))
     protected void timeKeeping(CallbackInfo ci){
+        if (!showDayTitle.get()) return;
         long worldTime = this.serverLevelData.getDayTime();
         if (worldTime % 24000L == 0) {
             for (ServerPlayer serverPlayer : this.players){
