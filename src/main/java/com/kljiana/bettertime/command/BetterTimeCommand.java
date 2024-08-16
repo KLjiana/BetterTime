@@ -18,7 +18,7 @@ public class BetterTimeCommand {
                         .then(Commands.argument("time", IntegerArgumentType.integer()).executes(ctx -> {
                             return setTime(ctx.getSource(), IntegerArgumentType.getInteger(ctx, "time"));
                         }).then(Commands.argument("days", IntegerArgumentType.integer()).executes(ctx -> {
-                            return setTime(ctx.getSource(), IntegerArgumentType.getInteger(ctx, "time"), IntegerArgumentType.getInteger(ctx, "days"));
+return setTime(ctx.getSource(), IntegerArgumentType.getInteger(ctx, "time"), IntegerArgumentType.getInteger(ctx, "days"));
                         }))).then(Commands.literal("day").executes(ctx -> {
                             return setTime(ctx.getSource(), 1000);
                         }).then(Commands.argument("days", IntegerArgumentType.integer()).executes(ctx -> {

@@ -2,8 +2,8 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.kljiana.bettertime.mixin",
-  "compatibilityLevel": "JAVA_8",
-  "refmap": "BetterTime.refmap.json",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "bettertime.refmap.json",
   "mixins": [
     "TimeCommandMixin",
     "TimeTickMixin"
