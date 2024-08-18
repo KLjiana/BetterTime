@@ -17,6 +17,7 @@ public class ChineseLanguageProvider extends LanguageProvider {
         add("commands.bettertime.query", "现在是第%s天，%02d:%02d （当日时间为%s刻，游戏时间为%s刻）");
         add("title.bettertime.day", "第%s天");
         add("hud.bettertime.time", "第%d天, %02d:%02d");
+        add("mod.bettertime", "求问史记");
 
     }
 }

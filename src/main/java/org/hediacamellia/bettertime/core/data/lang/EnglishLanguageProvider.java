@@ -17,5 +17,6 @@ public class EnglishLanguageProvider extends LanguageProvider {
         add("commands.bettertime.query", "The time is day %s, %02d:%02d (Daytime: %s ticks, Gametime: %s ticks)");
         add("title.bettertime.day", "Day %s");
         add("hud.bettertime.time", "Day %d, %02d:%02d");
+        add("mod.bettertime", "BetterTime");
     }
 }

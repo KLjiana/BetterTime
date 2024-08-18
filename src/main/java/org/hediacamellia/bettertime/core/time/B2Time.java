@@ -4,6 +4,7 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
+import org.hediacamellia.bettertime.core.debug.Debug;
 
 public class B2Time {
 
@@ -26,7 +27,7 @@ public class B2Time {
 
     public static int queryTime(CommandSourceStack pSource) {
         Level level = pSource.getLevel();
-        pSource.sendSuccess(() -> Component.translatable("commands.bettertime.query", getDays(level), getHours(level), getMinutes(level), getTodayTime(level), level.getGameTime()), false);
+        pSource.sendSuccess(() -> Component.literal("[§a"+Component.translatable("mod.bettertime").getString()+"§r]" + Component.translatable("commands.bettertime.query", getDays(level), getHours(level), getMinutes(level), getTodayTime(level), level.getGameTime()).getString()), true);
         return 0;
     }
 
@@ -39,7 +40,7 @@ public class B2Time {
         for (ServerLevel serverlevel : pSource.getServer().getAllLevels()) {
             serverlevel.setDayTime((days) * 24000L + pTime);
         }
-        pSource.sendSuccess(() -> Component.translatable("commands.bettertime.set", days, getHours(level), getMinutes(level), pTime), true);
+        pSource.sendSuccess(() -> Component.literal("[§a"+Component.translatable("mod.bettertime").getString()+"§r]" + Component.translatable("commands.bettertime.set", days, getHours(level), getMinutes(level), pTime).getString()), true);
         return getTodayTime(pSource.getLevel());
     }
 
@@ -54,7 +55,7 @@ public class B2Time {
         }
 
         int i = getTodayTime(pSource.getLevel());
-        pSource.sendSuccess(() -> Component.translatable("commands.bettertime.set", days, getHours(level), getMinutes(level), i), true);
+        pSource.sendSuccess(() -> Component.literal("[§a"+Component.translatable("mod.bettertime").getString()+"§r]" + Component.translatable("commands.bettertime.set", days, getHours(level), getMinutes(level), i).getString()), true);
         return i;
     }
 }
