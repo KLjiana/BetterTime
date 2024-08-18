@@ -44,11 +44,9 @@ public class ConfigScreen extends Screen {
                 .tooltip(Tooltip.create(Component.translatable("config.bettertime.showDayTitle.desc"))).build());
 
 
-        this.addRenderableWidget(new Button.Builder(Component.literal(Config.showDayTitle.get().toString()),e -> {
-            Config.showDayTitle.set(!Config.showDayTitle.get());
-            e.setMessage(Component.literal(Config.showDayTitle.get().toString()));
-        }).bounds(this.width/2 - 20  , this.height-30,40,15)
-                .tooltip(Tooltip.create(Component.translatable("config.bettertime.comfirm"))).build());
+        this.addRenderableWidget(new Button.Builder(Component.translatable("config.bettertime.comfirm"),e -> {
+            onClose();
+        }).bounds(this.width/2 - 20  , this.height-30,40,15).build());
 
         dateX = new EditBox(this.font, this.width  - 60, 100,40,15, Component.literal(Config.dateX.get().toString()));
         dateY = new EditBox(this.font, this.width  - 60, 120,40,15, Component.literal(Config.dateY.get().toString()));
