@@ -2,6 +2,7 @@ package com.kljiana.bettertime.config;
 
 import com.kljiana.bettertime.BetterTime;
 import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = BetterTime.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -13,6 +14,7 @@ public class Config {
     static {
         ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
         builder.push("Better Time");
+        System.out.println(ModList.get().getMods());
         showDateHud = builder.comment("If true, a date hud will show on your hud").define("Show Date Hud", true);
         dateX = builder.define("Date Hud X", 10);
         dateY = builder.define("Date Hud Y", 10);

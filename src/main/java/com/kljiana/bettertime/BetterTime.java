@@ -51,8 +51,24 @@ public class BetterTime {
         for (ServerLevel serverlevel : pSource.getServer().getAllLevels()) {
             serverlevel.setDayTime((days) * 24000L + pTime);
         }
+        inControlSetDay(level, days);
         pSource.sendSuccess(() -> Component.translatable("commands.bettertime.set", days, getHours(level), getMinutes(level), pTime), true);
         return getTodayTime(pSource.getLevel());
+    }
+
+    public static int setDay(CommandSourceStack pSource, long days) {
+        Level level = pSource.getLevel();
+        long pTime = getTodayTime(pSource.getLevel());
+        for (ServerLevel serverlevel : pSource.getServer().getAllLevels()) {
+            serverlevel.setDayTime((days) * 24000L + pTime);
+        }
+        inControlSetDay(level, days);
+        pSource.sendSuccess(() -> Component.translatable("commands.bettertime.set", days, getHours(level), getMinutes(level), pTime), true);
+        return getTodayTime(pSource.getLevel());
+    }
+
+    public static void inControlSetDay(Level level, long days){
+
     }
 
     public static int addTime(CommandSourceStack pSource, int pAmount) {
