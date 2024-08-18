@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.kljiana.bettertime.mixin",
+  "package": "org.hediacamellia.bettertime.core.mixin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "bettertime.refmap.json",
   "mixins": [

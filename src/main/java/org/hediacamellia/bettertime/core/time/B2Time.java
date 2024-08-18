@@ -1,23 +1,11 @@
-package com.kljiana.bettertime;
+package org.hediacamellia.bettertime.core.time;
 
-import com.kljiana.bettertime.config.Config;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-@Mod(BetterTime.MODID)
-public class BetterTime {
-    public static final String MODID = "bettertime";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
-    public BetterTime(){
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.configSpec);
-    }
+public class B2Time {
 
     public static int getTodayTime(Level pLevel) {
         return (int) (pLevel.getDayTime() % 24000L);

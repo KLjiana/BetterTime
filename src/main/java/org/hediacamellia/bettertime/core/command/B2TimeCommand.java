@@ -1,4 +1,4 @@
-package com.kljiana.bettertime.command;
+package org.hediacamellia.bettertime.core.command;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
@@ -6,8 +6,10 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.TimeArgument;
 
-import static com.kljiana.bettertime.BetterTime.*;
-public class BetterTimeCommand {
+import static org.hediacamellia.bettertime.core.time.B2Time.*;
+
+
+public class B2TimeCommand {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("bettertime").requires((sourceStack) -> sourceStack.hasPermission(2))
                 .then(Commands.literal("add").then(Commands.argument("time", TimeArgument.time()).executes(ctx -> {
@@ -18,7 +20,7 @@ public class BetterTimeCommand {
                         .then(Commands.argument("time", IntegerArgumentType.integer()).executes(ctx -> {
                             return setTime(ctx.getSource(), IntegerArgumentType.getInteger(ctx, "time"));
                         }).then(Commands.argument("days", IntegerArgumentType.integer()).executes(ctx -> {
-return setTime(ctx.getSource(), IntegerArgumentType.getInteger(ctx, "time"), IntegerArgumentType.getInteger(ctx, "days"));
+                            return setTime(ctx.getSource(), IntegerArgumentType.getInteger(ctx, "time"), IntegerArgumentType.getInteger(ctx, "days"));
                         }))).then(Commands.literal("day").executes(ctx -> {
                             return setTime(ctx.getSource(), 1000);
                         }).then(Commands.argument("days", IntegerArgumentType.integer()).executes(ctx -> {
