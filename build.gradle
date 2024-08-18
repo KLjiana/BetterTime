@@ -147,7 +147,6 @@ dependencies {
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     compileOnly("curse.maven:in-control-257356:5380330")
-    runtimeOnly("curse.maven:in-control-257356:5380330")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 

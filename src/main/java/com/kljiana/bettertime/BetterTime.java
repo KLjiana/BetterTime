@@ -1,10 +1,12 @@
 package com.kljiana.bettertime;
 
 import com.kljiana.bettertime.config.Config;
+import mcjty.incontrol.data.DataStorage;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -68,7 +70,10 @@ public class BetterTime {
     }
 
     public static void inControlSetDay(Level level, long days){
-
+        if (ModList.get().isLoaded("incontrol")){
+            DataStorage data = DataStorage.getData(level);
+            data.setDaycounter((int) days);
+        }
     }
 
     public static int addTime(CommandSourceStack pSource, int pAmount) {
