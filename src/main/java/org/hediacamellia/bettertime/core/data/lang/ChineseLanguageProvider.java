@@ -18,6 +18,14 @@ public class ChineseLanguageProvider extends LanguageProvider {
         add("title.bettertime.day", "第%s天");
         add("hud.bettertime.time", "第%d天, %02d:%02d");
         add("mod.bettertime", "求问史记");
-
+        add("config.bettertime.title", "求问史记 配置");
+        add("config.bettertime.showDateHud", "显示日期");
+        add("config.bettertime.showDateHud.desc", "如果为true，则日期hud将显示在您的hud上");
+        add("config.bettertime.showDayTitle", "显示日期标题");
+        add("config.bettertime.showDayTitle.desc", "如果为true，则日期标题将显示在您的屏幕上");
+        add("config.bettertime.dateX", "日期Hud X");
+        add("config.bettertime.dateY", "日期Hud Y");
+        add("config.bettertime.dateColor", "日期Hud 颜色");
+        add("config.bettertime.comfirm", "确认");
     }
 }

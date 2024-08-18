@@ -1,4 +1,4 @@
-package org.hediacamellia.bettertime;
+package org.hediacamellia.bettertime.core.config;
 
 import net.neoforged.neoforge.common.ModConfigSpec;
 
@@ -41,6 +41,6 @@ public class Config
             .define("Date Hud Color", -1);
 
 
-    static final ModConfigSpec SPEC = BUILDER.build();
+    public static final ModConfigSpec SPEC = BUILDER.build();
 }
 

@@ -7,7 +7,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.neoforged.fml.loading.FMLEnvironment;
 import org.hediacamellia.bettertime.BetterTime;
-import org.hediacamellia.bettertime.Config;
+import org.hediacamellia.bettertime.core.config.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

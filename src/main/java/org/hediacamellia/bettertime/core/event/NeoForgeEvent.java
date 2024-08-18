@@ -10,7 +10,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RenderGuiEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
-import org.hediacamellia.bettertime.Config;
+import org.hediacamellia.bettertime.core.config.Config;
 import org.hediacamellia.bettertime.core.command.B2TimeCommand;
 import org.hediacamellia.bettertime.core.time.B2Time;
 
