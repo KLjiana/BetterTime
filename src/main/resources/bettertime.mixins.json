@@ -6,7 +6,9 @@
   "refmap": "bettertime.refmap.json",
   "mixins": [
     "TimeCommandMixin",
-    "TimeTickMixin"
+    "TimeTickMixin",
+    "incontrol.TimeCommandMixin",
+    "incontrol.TimeDataMixin"
   ],
   "client": [
   ],

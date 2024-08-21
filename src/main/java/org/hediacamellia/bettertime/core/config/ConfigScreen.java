@@ -6,13 +6,8 @@ import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.neoforge.network.PacketDistributor;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @OnlyIn(Dist.CLIENT)
 public class ConfigScreen extends Screen {
@@ -28,8 +23,6 @@ public class ConfigScreen extends Screen {
     @Override
     protected void init() {
         super.init();
-
-        //this.addRenderableWidget(new EditBox(this.font, this.width  - 60, this.height -40,40,20, Component.empty()));
 
         this.addRenderableWidget(new Button.Builder(Component.literal(Config.showDateHud.get().toString()),e -> {
             Config.showDateHud.set(!Config.showDateHud.get());
@@ -93,5 +86,4 @@ public class ConfigScreen extends Screen {
 
     }
 
-    private Map<Map<Integer,Integer>,String> map = new HashMap<>();
 }

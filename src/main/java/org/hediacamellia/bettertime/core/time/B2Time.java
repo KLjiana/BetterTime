@@ -4,7 +4,6 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
-import org.hediacamellia.bettertime.core.debug.Debug;
 
 public class B2Time {
 
@@ -42,6 +41,21 @@ public class B2Time {
         }
         pSource.sendSuccess(() -> Component.literal("[§a"+Component.translatable("mod.bettertime").getString()+"§r]" + Component.translatable("commands.bettertime.set", days, getHours(level), getMinutes(level), pTime).getString()), true);
         return getTodayTime(pSource.getLevel());
+    }
+
+    public static int setDay(CommandSourceStack pSource, long days) {
+        Level level = pSource.getLevel();
+        long pTime = getTodayTime(pSource.getLevel());
+        for (ServerLevel serverlevel : pSource.getServer().getAllLevels()) {
+            serverlevel.setDayTime((days) * 24000L + pTime);
+        }
+        inControlSetDay(level, days);
+        pSource.sendSuccess(() -> Component.literal("[§a"+Component.translatable("mod.bettertime").getString()+"§r]" + Component.translatable("commands.bettertime.set", days, getHours(level), getMinutes(level), pTime).getString()), true);
+        return getTodayTime(pSource.getLevel());
+    }
+
+    public static void inControlSetDay(Level level, long days){
+
     }
 
     public static int addTime(CommandSourceStack pSource, int pAmount) {

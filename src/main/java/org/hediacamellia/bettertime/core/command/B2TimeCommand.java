@@ -21,6 +21,8 @@ public class B2TimeCommand {
                             return setTime(ctx.getSource(), IntegerArgumentType.getInteger(ctx, "time"));
                         }).then(Commands.argument("days", IntegerArgumentType.integer()).executes(ctx -> {
                             return setTime(ctx.getSource(), IntegerArgumentType.getInteger(ctx, "time"), IntegerArgumentType.getInteger(ctx, "days"));
+                        })).then(Commands.literal("day").executes(ctx -> {
+                            return setDay(ctx.getSource(), IntegerArgumentType.getInteger(ctx, "time"));
                         }))).then(Commands.literal("day").executes(ctx -> {
                             return setTime(ctx.getSource(), 1000);
                         }).then(Commands.argument("days", IntegerArgumentType.integer()).executes(ctx -> {
@@ -43,9 +45,9 @@ public class B2TimeCommand {
                             return setTime(ctx.getSource(), 3000, IntegerArgumentType.getInteger(ctx, "days"));
                         }))).then(Commands.literal("evening").executes(ctx -> {
                             return setTime(ctx.getSource(), 15000);
-                        })).then(Commands.argument("days", IntegerArgumentType.integer()).executes(ctx -> {
+                        }).then(Commands.argument("days", IntegerArgumentType.integer()).executes(ctx -> {
                             return setTime(ctx.getSource(), 15000, IntegerArgumentType.getInteger(ctx, "days"));
-                        })))
+                        }))))
 
                 .then(Commands.literal("query").executes(ctx -> {
                     return queryTime(ctx.getSource());

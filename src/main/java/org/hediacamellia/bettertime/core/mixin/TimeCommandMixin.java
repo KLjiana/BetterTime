@@ -3,7 +3,6 @@ package org.hediacamellia.bettertime.core.mixin;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.commands.TimeCommand;
-import org.hediacamellia.bettertime.core.debug.Debug;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

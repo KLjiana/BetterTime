@@ -18,6 +18,10 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 base {
@@ -126,7 +130,7 @@ dependencies {
 
     // Example mod dependency using a file as dependency
     // implementation files("libs/coolmod-${mc_version}-${coolmod_version}.jar")
-
+    implementation files("libs/incontrol-1.21-10.0.0.jar")
     // Example project dependency using a sister or child project:
     // implementation project(":myproject")
 

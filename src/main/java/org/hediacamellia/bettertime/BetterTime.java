@@ -8,7 +8,6 @@ import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import org.hediacamellia.bettertime.core.config.Config;
 import org.hediacamellia.bettertime.core.config.ScreenProvider;
 import org.hediacamellia.bettertime.core.data.Data;
-import org.hediacamellia.bettertime.core.config.ConfigScreen;
 
 import java.util.function.Supplier;
 
