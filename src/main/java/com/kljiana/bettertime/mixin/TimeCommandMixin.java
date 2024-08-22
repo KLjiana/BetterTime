@@ -12,19 +12,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class TimeCommandMixin {
     @Inject(method = "setTime", at = @At(value = "HEAD"), cancellable = true)
     private static void banSet(CommandSourceStack pSource, int pTime, CallbackInfoReturnable<Integer> cir){
-        pSource.sendSuccess(() -> Component.translatable("commands.bettertime.banvanilla"), true);
+        pSource.sendSuccess(Component.translatable("commands.bettertime.banvanilla"), true);
         cir.setReturnValue(0);
     }
 
     @Inject(method = "queryTime", at = @At(value = "HEAD"), cancellable = true)
     private static void banQuery(CommandSourceStack pSource, int pTime, CallbackInfoReturnable<Integer> cir){
-        pSource.sendSuccess(() -> Component.translatable("commands.bettertime.banvanilla"), true);
+        pSource.sendSuccess(Component.translatable("commands.bettertime.banvanilla"), true);
         cir.setReturnValue(0);
     }
 
     @Inject(method = "addTime", at = @At(value = "HEAD"), cancellable = true)
     private static void banAdd(CommandSourceStack pSource, int pTime, CallbackInfoReturnable<Integer> cir){
-        pSource.sendSuccess(() -> Component.translatable("commands.bettertime.banvanilla"), true);
+        pSource.sendSuccess(Component.translatable("commands.bettertime.banvanilla"), true);
         cir.setReturnValue(0);
     }
 }

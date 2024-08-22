@@ -13,7 +13,6 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
-    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
 apply plugin: 'org.spongepowered.mixin'
@@ -22,7 +21,7 @@ group = mod_version
 version = mod_group_id
 
 base {
-    archivesName = mod_id
+    archivesName = "${mod_id}-${mod_loader}-${minecraft_version}"
 }
 
 java {
@@ -146,7 +145,7 @@ dependencies {
     // If the group id is "net.minecraft" and the artifact id is one of ["client", "server", "joined"],
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    compileOnly("curse.maven:in-control-257356:5380330")
+    implementation fg.deobf("curse.maven:in-control-257356:5578250")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 

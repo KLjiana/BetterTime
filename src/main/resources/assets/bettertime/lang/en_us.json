@@ -3,5 +3,6 @@
   "commands.bettertime.banvanilla": "Please use command /bettertime !",
   "commands.bettertime.query": "The time is day %s, %02d:%02d (Daytime: %s ticks, Gametime: %s ticks)",
   "title.bettertime.day": "Day %s",
-  "hud.bettertime.time": "Day %d, %02d:%02d"
+  "hud.bettertime.time": "Day %d, %02d:%02d",
+  "mod.bettertime": "BetterTime"
 }
