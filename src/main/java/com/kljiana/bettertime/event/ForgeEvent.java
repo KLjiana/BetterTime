@@ -8,6 +8,8 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RenderGuiEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -23,6 +25,7 @@ public final class ForgeEvent {
         BetterTimeCommand.register(event.getDispatcher());
     }
 
+    @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
     public static void showTime(RenderGuiEvent.Pre event){
         if (!showDateHud.get()) return;
