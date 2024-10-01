@@ -23,6 +23,17 @@ public class Config
             .comment("如果为true，则日期标题将显示在您的屏幕上")
             .define("Show day title", true);
 
+    // hourAdd, minAdd
+    public static final ModConfigSpec.ConfigValue<Integer> hourAdd = BUILDER
+            .comment("The hour addition")
+            .comment("日期Hud 小时增加量")
+            .define("Hour addition", 0);
+
+    public static final ModConfigSpec.ConfigValue<Integer> minAdd = BUILDER
+            .comment("The minute addition")
+            .comment("日期Hud 分钟增加量")
+            .define("Minute addition", 0);
+
 
     // dateX, dateY, dateColor;
     public static final ModConfigSpec.ConfigValue<Integer> dateX = BUILDER

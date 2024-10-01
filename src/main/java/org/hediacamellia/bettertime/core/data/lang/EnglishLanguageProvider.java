@@ -27,5 +27,7 @@ public class EnglishLanguageProvider extends LanguageProvider {
         add("config.bettertime.dateY", "Date Hud Y");
         add("config.bettertime.dateColor", "Date Hud Color");
         add("config.bettertime.comfirm", "Comfirm");
+        add("config.bettertime.hourAdd", "Date Hud Hour addition");
+        add("config.bettertime.minAdd", "Date Hud Minute addition");
     }
 }

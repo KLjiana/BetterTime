@@ -27,5 +27,7 @@ public class ChineseLanguageProvider extends LanguageProvider {
         add("config.bettertime.dateY", "日期Hud Y");
         add("config.bettertime.dateColor", "日期Hud 颜色");
         add("config.bettertime.comfirm", "确认");
+        add("config.bettertime.hourAdd", "日期Hud 小时增加量");
+        add("config.bettertime.minAdd", "日期Hud 分钟增加量");
     }
 }

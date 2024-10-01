@@ -12,6 +12,8 @@ import net.neoforged.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class ConfigScreen extends Screen {
 
+    EditBox hourAdd;
+    EditBox minAdd;
     EditBox dateX;
     EditBox dateY;
     EditBox dateColor;
@@ -44,15 +46,23 @@ public class ConfigScreen extends Screen {
         dateX = new EditBox(this.font, this.width  - 60, 100,40,15, Component.literal(Config.dateX.get().toString()));
         dateY = new EditBox(this.font, this.width  - 60, 120,40,15, Component.literal(Config.dateY.get().toString()));
         dateColor = new EditBox(this.font, this.width  - 60, 140,40,15, Component.literal(Config.dateColor.get().toString()));
+        hourAdd = new EditBox(this.font, this.width  - 60, 160,40,15, Component.literal(Config.hourAdd.get().toString()));
+        minAdd = new EditBox(this.font, this.width  - 60, 180,40,15, Component.literal(Config.minAdd.get().toString()));
         dateX.setMaxLength(10);
         dateY.setMaxLength(10);
         dateColor.setMaxLength(10);
+        hourAdd.setMaxLength(10);
+        minAdd.setMaxLength(10);
         dateX.setValue(Config.dateX.get().toString());
         dateY.setValue(Config.dateY.get().toString());
         dateColor.setValue(Config.dateColor.get().toString());
+        hourAdd.setValue(Config.hourAdd.get().toString());
+        minAdd.setValue(Config.minAdd.get().toString());
         this.addRenderableWidget(dateX);
         this.addRenderableWidget(dateY);
         this.addRenderableWidget(dateColor);
+        this.addRenderableWidget(hourAdd);
+        this.addRenderableWidget(minAdd);
     }
 
     @Override
@@ -75,6 +85,10 @@ public class ConfigScreen extends Screen {
         graphics.drawString(this.font, dateY, 20,  120, 0xFFFFFF,false);
         String dateColor = Component.translatable("config.bettertime.dateColor").getString();
         graphics.drawString(this.font, dateColor, 20,  140, 0xFFFFFF,false);
+        String hourAdd = Component.translatable("config.bettertime.hourAdd").getString();
+        graphics.drawString(this.font, hourAdd, 20,  160, 0xFFFFFF,false);
+        String minAdd = Component.translatable("config.bettertime.minAdd").getString();
+        graphics.drawString(this.font, minAdd, 20,  180, 0xFFFFFF,false);
     }
 
     @Override
@@ -83,7 +97,8 @@ public class ConfigScreen extends Screen {
         Config.dateX.set(Integer.valueOf(dateX.getValue()));
         Config.dateY.set(Integer.valueOf(dateY.getValue()));
         Config.dateColor.set(Integer.valueOf(dateColor.getValue()));
-
+        Config.hourAdd.set(Integer.valueOf(hourAdd.getValue()));
+        Config.minAdd.set(Integer.valueOf(minAdd.getValue()));
     }
 
 }

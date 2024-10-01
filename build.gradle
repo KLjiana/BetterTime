@@ -179,6 +179,12 @@ publishing {
         maven {
             url "file://${project.projectDir}/repo"
         }
+        maven {
+            url "https://cursemaven.com"
+            content {
+                includeGroup "curse.maven"
+            }
+        }
     }
 }
 
