@@ -27,7 +27,7 @@ public final class ForgeEvent {
 
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
-    public static void showTime(RenderGuiEvent.Pre event){
+    public static void showTime(RenderGuiEvent.Pre event) {
         if (!showDateHud.get()) return;
         GuiGraphics guiGraphics = event.getGuiGraphics();
         Minecraft minecraft = Minecraft.getInstance();
@@ -35,7 +35,7 @@ public final class ForgeEvent {
         Font font = minecraft.font;
 
         if (level == null) return;
-        MutableComponent time = Component.translatable("hud.bettertime.time", getDays(level), getHours(level), getMinutes(level));
+        MutableComponent time = Component.translatable("hud.bettertime.time", getDays(level), getHours(level) + hourAdd.get(), getMinutes(level) + minAdd.get());
         guiGraphics.drawString(
                 font,
                 time,
